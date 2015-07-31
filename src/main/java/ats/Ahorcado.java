@@ -4,8 +4,11 @@ public class Ahorcado {
 
 	private char[] palabraClave;
 	private char[] estado;
+	
+	private int errores;
 
 	public Ahorcado(String palabra) {
+		this.errores = 0;
 		this.palabraClave = palabra.toLowerCase().toCharArray();
 		estado = new char[palabra.length()];
 		for (int x = 0; x < palabraClave.length; x++) {
@@ -19,18 +22,22 @@ public class Ahorcado {
 
 	public void juegaLetra(char letra) {
 
-		//int cambios = 0;
+		int cambios = 0;
 		for (int x = 0; x < palabraClave.length; x++) {
-			if (palabraClave[x] == letra) {
-				estado[x] = letra;	
+			if (palabraClave[x] == Character.toLowerCase(letra)) {
+				estado[x] = Character.toLowerCase(letra);
+				cambios++;
 			}
+		}
+		if (cambios == 0) {
+			errores++;
 		}
 
 	}
 
 	public Object esGanador() {
 		// TODO Auto-generated method stub
-		return String.valueOf(palabraClave).equals(String.valueOf(estado));
+		return (errores < 7) && String.valueOf(palabraClave).equals(String.valueOf(estado));
 	}
 
 }

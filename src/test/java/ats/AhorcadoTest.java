@@ -36,6 +36,7 @@ public class AhorcadoTest {
 
 	}
 
+
 	@Test
 	public void esGanadorReturnTrue() {
 
@@ -43,6 +44,17 @@ public class AhorcadoTest {
 		Ahorcado ahorcado = new Ahorcado(palabra);
 		ahorcado.juegaLetra('p');
 		ahorcado.juegaLetra('e');
+		Assert.assertEquals(true, ahorcado.esGanador());
+
+	}
+	
+	@Test
+	public void esGanadorReturnTrueEUpper() {
+
+		String palabra = "pepe";
+		Ahorcado ahorcado = new Ahorcado(palabra);
+		ahorcado.juegaLetra('p');
+		ahorcado.juegaLetra('E');
 		Assert.assertEquals(true, ahorcado.esGanador());
 
 	}
@@ -57,4 +69,23 @@ public class AhorcadoTest {
 		Assert.assertEquals(false, ahorcado.esGanador());
 
 	}
+	
+	@Test
+	public void sdfsdfsdfsfdsdfdf() {
+
+		String palabra = "pepe";
+		Ahorcado ahorcado = new Ahorcado(palabra);
+		ahorcado.juegaLetra('z');
+		ahorcado.juegaLetra('n');
+		ahorcado.juegaLetra('w');
+		ahorcado.juegaLetra('l');
+		ahorcado.juegaLetra('a');
+		ahorcado.juegaLetra('h');
+		ahorcado.juegaLetra('y');
+		ahorcado.juegaLetra('p');
+		ahorcado.juegaLetra('e');
+		Assert.assertEquals(false, ahorcado.esGanador());
+
+	}
+	
 }
