@@ -28,4 +28,9 @@ public class Ahorcado {
 
 	}
 
+	public Object esGanador() {
+		// TODO Auto-generated method stub
+		return String.valueOf(palabraClave).equals(String.valueOf(estado));
+	}
+
 }
