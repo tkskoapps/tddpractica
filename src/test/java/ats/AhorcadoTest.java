@@ -71,7 +71,7 @@ public class AhorcadoTest {
 	}
 	
 	@Test
-	public void sdfsdfsdfsfdsdfdf() {
+	public void EsGanadorRetornaFalsePorCantidadDeIntentosFallidos() {
 
 		String palabra = "pepe";
 		Ahorcado ahorcado = new Ahorcado(palabra);
@@ -86,6 +86,38 @@ public class AhorcadoTest {
 		ahorcado.juegaLetra('e');
 		Assert.assertEquals(false, ahorcado.esGanador());
 
+	}
+	
+	@Test
+	public void quedanIntentosRetornaFalse(){
+		
+		String palabra = "pepe";
+		Ahorcado ahorcado = new Ahorcado(palabra);
+		ahorcado.juegaLetra('z');
+		ahorcado.juegaLetra('n');
+		ahorcado.juegaLetra('w');
+		ahorcado.juegaLetra('l');
+		ahorcado.juegaLetra('a');
+		ahorcado.juegaLetra('h');
+		ahorcado.juegaLetra('y');
+		Assert.assertEquals(false, ahorcado.quedanIntentos());		
+		
+	}
+	
+	@Test
+	public void quedanIntentosRetornaTrue(){
+		
+		String palabra = "pepe";
+		Ahorcado ahorcado = new Ahorcado(palabra);
+		ahorcado.juegaLetra('z');
+		ahorcado.juegaLetra('n');
+		ahorcado.juegaLetra('w');
+		ahorcado.juegaLetra('e');
+		ahorcado.juegaLetra('a');
+		ahorcado.juegaLetra('h');
+		ahorcado.juegaLetra('y');
+		Assert.assertEquals(true, ahorcado.quedanIntentos());		
+		
 	}
 	
 }

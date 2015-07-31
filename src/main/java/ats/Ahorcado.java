@@ -40,4 +40,8 @@ public class Ahorcado {
 		return (errores < 7) && String.valueOf(palabraClave).equals(String.valueOf(estado));
 	}
 
+	public boolean quedanIntentos() {
+		return (errores < 7);
+	}
+
 }
