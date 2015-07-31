@@ -32,7 +32,7 @@ public class CharCounterTest {
 	public void countAllShouldReturn2K() {
 		CharCounter cc = new CharCounter();
 		HashMap<Character, Integer> result = cc.countAll("KaKa");
-		Assert.assertEquals(new Integer(2),result.get('K'));
+		Assert.assertEquals(new Integer(2),result.get('k'));
 	}
 	
 	@Test
