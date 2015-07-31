@@ -37,7 +37,7 @@ public class Ahorcado {
 
 	public Object esGanador() {
 		// TODO Auto-generated method stub
-		return (errores < 7) && String.valueOf(palabraClave).equals(String.valueOf(estado));
+		return quedanIntentos() && String.valueOf(palabraClave).equals(String.valueOf(estado));
 	}
 
 	public boolean quedanIntentos() {

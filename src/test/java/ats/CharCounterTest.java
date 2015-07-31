@@ -41,5 +41,12 @@ public class CharCounterTest {
 		HashMap<Character, Integer> result = cc.countAll("Kaka");
 		Assert.assertEquals(new Integer(2),result.get('k'));
 	}
+	
+	@Test
+	public void countAllShouldReturn0Z() {
+		CharCounter cc = new CharCounter();
+		HashMap<Character, Integer> result = cc.countAll("Kaka");
+		Assert.assertEquals(new Integer(0),result.get('z'));
+	}
 
 }
