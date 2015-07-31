@@ -19,7 +19,7 @@ public class AhorcadoTest {
 		
 		String palabra = "pepe";
 		Ahorcado ahorcado = new Ahorcado(palabra);	
-		ahorcado.juegaLetra("p");
+		ahorcado.juegaLetra('p');
 		String estado = ahorcado.getEstado();
 		Assert.assertEquals("p*p*", ahorcado.getEstado());
 		

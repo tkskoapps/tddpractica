@@ -2,25 +2,30 @@ package ats;
 
 public class Ahorcado {
 
-	private String estado;
-	private String letra = "";
+	private char[] palabraClave;
+	private char[] estado;
 
 	public Ahorcado(String palabra) {
-		estado = "****";
-		// TODO Auto-generated constructor stub
+		this.palabraClave = palabra.toLowerCase().toCharArray();
+		estado = new char[palabra.length()];
+		for (int x = 0; x < palabraClave.length; x++) {
+			estado[x] = '*';
+		}
 	}
 
 	public String getEstado() {
-		// TODO Auto-generated method stub
-		if (letra.equals("p")) {
-			return "p*p*";
-		}
-		return estado;
+		return String.valueOf(estado);
 	}
 
-	public void juegaLetra(String letra) {
-		// TODO Auto-generated method stub
-		this.letra = letra;
+	public void juegaLetra(char letra) {
+
+		//int cambios = 0;
+		for (int x = 0; x < palabraClave.length; x++) {
+			if (palabraClave[x] == letra) {
+				estado[x] = letra;	
+			}
+		}
+
 	}
 
 }
