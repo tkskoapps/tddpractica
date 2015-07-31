@@ -2,13 +2,25 @@ package ats;
 
 public class Ahorcado {
 
+	private String estado;
+	private String letra = "";
+
 	public Ahorcado(String palabra) {
+		estado = "****";
 		// TODO Auto-generated constructor stub
 	}
 
-	public Object getEstado() {
+	public String getEstado() {
 		// TODO Auto-generated method stub
-		return "****";
+		if (letra.equals("p")) {
+			return "p*p*";
+		}
+		return estado;
+	}
+
+	public void juegaLetra(String letra) {
+		// TODO Auto-generated method stub
+		this.letra = letra;
 	}
 
 }
